@@ -1,7 +1,13 @@
 pipeline {
     agent any
 
-    stages {
+    stages { 
+	stage('git') {
+            steps {
+                git 'https://github.com/mohansai25/PIPE_testing.git'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building..'
